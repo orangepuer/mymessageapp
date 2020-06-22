@@ -1,5 +1,5 @@
 class PagesController < ApplicationController
   def home
-    @messages = Message.all
+    @messages = Message.includes(:user)
   end
 end
