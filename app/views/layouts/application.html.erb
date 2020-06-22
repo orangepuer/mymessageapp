@@ -10,15 +10,7 @@
   </head>
 
   <body>
-    <p>
-      <%= link_to '#messages', root_path %>
-    </p>
-    <p>
-      <% if user_signed_in? %>
-        <%= link_to 'Выйти', destroy_user_session_path, method: :delete %> |
-        <%= link_to current_user.email, '' %>
-      <% end %>
-    </p>
+    <%= render 'shared/nav' %>
 
     <%= yield %>
   </body>
