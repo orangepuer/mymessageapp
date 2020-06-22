@@ -10,22 +10,15 @@
   </head>
 
   <body>
-    <%= link_to '#messages', root_path %>
-
-    <ul>
+    <p>
+      <%= link_to '#messages', root_path %>
+    </p>
+    <p>
       <% if user_signed_in? %>
-        <li>
-          <%= link_to 'Выйти', destroy_user_session_path, method: :delete %>
-        </li>
-        <li>
-          <%= link_to current_user.email, '' %>
-        </li>
-      <% else %>
-        <li>
-          <%= link_to 'Войти', new_user_session_path %>
-        </li>
+        <%= link_to 'Выйти', destroy_user_session_path, method: :delete %> |
+        <%= link_to current_user.email, '' %>
       <% end %>
-    </ul>
+    </p>
 
     <%= yield %>
   </body>

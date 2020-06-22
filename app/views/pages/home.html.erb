@@ -1,2 +1,23 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<p>
+  <% if user_signed_in? %>
+    <%= form_with(model: Message.new) do |f| %>
+      <%= f.text_field :body %>
+      <%= f.submit 'Отправить' %>
+    <% end %>
+  <% else %>
+    <%= link_to 'Войдите, чтобы оставить сообщение', new_user_session_path %>
+  <% end %>
+</p>
+
+<ul>
+  <% @messages.each do |message| %>
+    <li>
+      <span><%= message.user.email %></span>
+      <br>
+      <span><%= message.created_at %></span>
+      <p>
+        <%= message.body %>
+      </p>
+    </li>
+  <% end %>
+</ul>
