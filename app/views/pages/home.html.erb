@@ -1,23 +1,28 @@
-<p>
+<div class="row">
   <% if user_signed_in? %>
     <%= form_with(model: Message.new) do |f| %>
-      <%= f.text_field :body %>
-      <%= f.submit 'Отправить' %>
+      <div class="input-group">
+        <span class="input-group-addon" id="basic-addon1">Введите сообщение</span>
+        <%= f.text_field :body, class: 'form-control' %>
+      </div>
+      <br>
+      <%= f.submit 'Отправить', class: 'btn btn-primary pull-right' %>
     <% end %>
   <% else %>
-    <%= link_to 'Войдите, чтобы оставить сообщение', new_user_session_path %>
+    <div class="btn-group">
+      <%= link_to 'Войдите, чтобы оставить сообщение', new_user_session_path, class: 'btn btn-primary' %>
+    </div>
   <% end %>
-</p>
-
-<ul>
+</div>
+<br>
+<div class="row">
   <% @messages.each do |message| %>
-    <li>
-      <span><%= message.user.email %></span>
-      <br>
-      <span><%= message.created_at %></span>
-      <p>
-        <%= message.body %>
-      </p>
-    </li>
+    <div class="list-group">
+      <a href="#" class="list-group-item">
+        <p class="list-group-item-text"><%= message.user.email %></p>
+        <p class="list-group-item-text"><%= message.created_at %></p>
+        <h4 class="list-group-item-heading"><%= message.body %></h4>
+      </a>
+    </div>
   <% end %>
-</ul>
+</div>
