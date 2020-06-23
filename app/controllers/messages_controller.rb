@@ -2,7 +2,8 @@ class MessagesController < ApplicationController
   before_action :authenticate_user!, only: [:create]
 
   def create
-    current_user.messages.create(message_params)
+    @message = current_user.messages.new(message_params)
+    helpers.flash_error_messages(@message) unless @message.save
 
     redirect_to root_path
   end
