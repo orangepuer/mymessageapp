@@ -1,0 +1,4 @@
+<h2>Наши пользователи</h2>
+<% User.all.each do |user| %>
+  <p><%= user.email %></p>
+<% end %>

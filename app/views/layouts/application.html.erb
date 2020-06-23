@@ -11,9 +11,16 @@
 
   <body>
     <div class="container">
-      <%= render 'shared/nav' %>
+      <div class="row">
+        <div class="col-md-8">
+          <%= render 'shared/nav' %>
 
-      <%= yield %>
+          <%= yield %>
+        </div>
+        <div class="col-md-4">
+          <%= render 'shared/sidebar' %>
+        </div>
+      </div>
     </div>
   </body>
 </html>
