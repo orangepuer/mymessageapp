@@ -5,4 +5,10 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   has_many :messages, dependent: :destroy
+
+  validates :name, :surname, :patronymic, presence: true
+
+  def full_name
+    "#{surname.capitalize} #{name.capitalize} #{surname.capitalize}"
+  end
 end
