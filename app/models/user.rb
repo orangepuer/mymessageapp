@@ -6,9 +6,9 @@ class User < ApplicationRecord
 
   has_many :messages, dependent: :destroy
 
-  validates :name, :surname, :patronymic, presence: true
+  validates :name, :surname, :patronymic, presence: true, length: { minimum: 5, maximum: 20 }
 
   def full_name
-    "#{surname.capitalize} #{name.capitalize} #{surname.capitalize}"
+    "#{surname.capitalize} #{name.capitalize} #{patronymic.capitalize}"
   end
 end
