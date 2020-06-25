@@ -22,7 +22,7 @@
     <div class="list-group">
       <a href="#" class="list-group-item">
         <p class="list-group-item-text"><%= message.user.full_name %></p>
-        <p class="list-group-item-text"><%= message.created_at %></p>
+        <p class="list-group-item-text"><%= date_to_formatted(message.created_at) %></p>
         <h4 class="list-group-item-heading"><%= message.body %></h4>
       </a>
     </div>
