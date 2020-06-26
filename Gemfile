@@ -65,6 +65,7 @@ group :test do
   # Easy installation and use of chromedriver to run system tests with Chrome
   gem 'chromedriver-helper'
   gem 'shoulda-matchers', '~> 4.0'
+  gem 'launchy', '~> 2.4', '>= 2.4.3'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
