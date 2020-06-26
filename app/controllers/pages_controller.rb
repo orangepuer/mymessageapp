@@ -1,5 +1,5 @@
 class PagesController < ApplicationController
   def home
-    @messages = Message.includes(:user)
+    @messages = Message.includes(:user).recent
   end
 end

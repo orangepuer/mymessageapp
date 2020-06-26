@@ -1,4 +1,4 @@
 <h2>Наши пользователи</h2>
 <% User.all.each do |user| %>
-  <p><%= user.full_name %></p>
+  <p><%= "#{user.name.capitalize} #{user.surname.capitalize[0]}." %></p>
 <% end %>
