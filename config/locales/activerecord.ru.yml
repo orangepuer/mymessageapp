@@ -1,0 +1,12 @@
+ru:
+  activerecord:
+    models:
+      user: 'Пользователь'
+      message: 'Сообщение'
+    attributes:
+      user:
+        name: 'Имя'
+        surname: 'Фамилия'
+        patronymic: 'Отчество'
+      message:
+        body: 'Содержимое'
