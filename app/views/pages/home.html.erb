@@ -4,7 +4,9 @@
   <% if user_signed_in? %>
     <%= form_with(model: Message.new) do |f| %>
       <div class="input-group">
-        <span class="input-group-addon" id="basic-addon1">Введите сообщение</span>
+        <span class="input-group-addon" id="basic-addon1">
+          <%= f.label :body, 'Введите сообщение' %>
+        </span>
         <%= f.text_field :body, class: 'form-control' %>
       </div>
       <br>
