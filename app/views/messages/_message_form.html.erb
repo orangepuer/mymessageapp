@@ -1,0 +1,10 @@
+<%= form_with(model: Message.new, local: true) do |f| %>
+  <div class="input-group">
+    <span class="input-group-addon" id="basic-addon1">
+      <%= f.label :body, 'Введите сообщение' %>
+    </span>
+    <%= f.text_field :body, class: 'form-control' %>
+  </div>
+  <br>
+  <%= f.submit 'Отправить', class: 'btn btn-primary pull-right' %>
+<% end %>
